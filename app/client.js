@@ -1,11 +1,17 @@
 'use strict';
 
-require('./common/js/app1');
+var angular = require('angular');
+var ngModule = angular.module('euro', ['ngRoute']);
+
+
+require('angular-route');
+require('./common/js/app.config.js')(ngModule);
+require('./common/js/services')(ngModule);
+// require('./common/js/directives')(ngModule);
+
+
+require('./components')(ngModule);
+
+
 require('./common/styles/app.styl');
-
-var home = require("./common/templates/home.jade")();
-
-var x = document.getElementById("myDiv");
-x.innerHTML = home;
-
-console.log('main app!!!');
+require('./vendor/foundation.min.css');

@@ -1,0 +1,9 @@
+h1.text-center {{homeCtrl.caption}}
+
+h3.text-center.subheader Matchday: {{homeCtrl.matchday}}
+
+div(ng-repeat="fixture in homeCtrl.todaysFixtures")
+    {{fixture.homeTeamName}} {{fixture.result.goalsHomeTeam}} - {{fixture.result.goalsAwayTeam}} {{fixture.awayTeamName}}
+
+a(href="#/fixtures") See all fixtures
+    

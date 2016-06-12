@@ -1,0 +1,19 @@
+h1.text-center These are all fixtures
+a(href="#/") Home
+
+table.hover
+    thead
+        tr
+            th(width="250") Date
+            th.text-center Home team
+            th(width="50").text-center Result
+            th.text-center Away team
+            th(width="100") Status
+    tbody
+        tr(ng-repeat="fixture in fixturesCtrl.fixtures")
+            td {{fixture.date | date:'EEEE, MMMM d, h:mm a'}}
+            td.text-center {{fixture.homeTeamName}}
+            td.text-center {{fixture.result.goalsHomeTeam}} - {{fixture.result.goalsAwayTeam}}
+            td.text-center {{fixture.awayTeamName}}
+            td {{fixture.status}}
+            
